@@ -83,9 +83,9 @@ passport.deserializeUser(User.deserializeUser());
 
 
 // root
-// app.get("/",(req,res)=>{
-//     res.send("This is your root path");
-// })
+app.get("/",(req,res)=>{
+    res.send("This is your root path");
+})
 
 app.use((req,res,next)=>{
     res.locals.success=req.flash("success");
