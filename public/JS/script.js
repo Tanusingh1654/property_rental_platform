@@ -16,3 +16,17 @@
       }, false)
     })
   })()
+
+ 
+  let navbar=document.getElementsByClassName("navbar");
+  let toggler=document.getElementsByClassName("navbar-toggler");
+ let active=false;
+  toggler.addEventListener("click",()=>{
+    if(!active){
+      navbar.style.height="10rem";
+      active=true;
+    }else{
+      navbar.style.height="5rem";
+      active=false;
+    }
+  })

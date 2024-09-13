@@ -1,20 +1,24 @@
 <% layout("/layouts/boilerPlate") %>
   <style>
     #filters {
+      /* border:2px solid green; */
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      width: 100%;
     }
 
     .filter{
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 0.6rem 2rem 0rem 2rem;
+      align-items: center; 
+       justify-content:space-between;
+      margin: 0.6rem 1rem 0rem 1rem;
       opacity:0.8;
+     
+     
     }
     .filter:hover{
       opacity:1;
@@ -25,20 +29,92 @@
     }
 
     .tax-toggle{
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 1px solid black;
       border-radius: 1rem;
       height: 3rem;
       padding: 0.5rem;
-      margin-left: 1rem;
+      width: 12rem;
+      font-size: 1.1rem;
+      text-align: center;
+      /* float:right; */
     }
+    .below{
+      display: flex;
+      /* align-items:center */
+      justify-content: center;
+      justify-content: space-between;
+      margin: 1rem;
+      border-radius: 0.5rem;
+    }
+    .offcanvas-header{
+      padding: 3.5rem;
+      text-align: center;
+    }
+   
   </style>
 
 
   <!-- <form method="get" action="/listings/new">
         <button>Create new List</button>
     </form> -->
-
-  <div id="filters">
+<body>
+  <div class="below" style="border:2px solid rgb(243, 243, 247)">
+  <button class="navbar-toggler tax-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+    choose preferences
+  </button>
+  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+    <div class="offcanvas-header" >
+      <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">So many options for you</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="filters">
+        
+        <div class="filter">
+          <div><i class="fa-solid fa-fire"></i></div>
+          <p>Trending</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-mountain"></i></div>
+          <p>Mountain</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-campground"></i></div>
+          <p>Camping</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-umbrella-beach"></i></div>
+          <p>Beaches</p>
+        </div>
+        <div class="filter">
+         <div> <i class="fa-solid fa-water"></i></div>
+          <p>River</p>
+        </div>
+        <div class="filter">
+          <div> <i class="fa-solid fa-bed"></i></div>
+           <p>Rooms</p>
+         </div>
+         <div class="filter">
+          <div> <i class="fa-solid fa-mountain-sun"></i></div>
+           <p>Iconic cities</p>
+         </div>
+         <div class="filter">
+          <div><i class="fa-brands fa-fort-awesome"></i></div>
+           <p>Castles</p>
+         </div>
+    
+         
+        
+      </div>
+    </div>
+  </div>
+  <!-- <div id="filters"></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      click me
+    </button>
     <div class="filter">
       <div><i class="fa-solid fa-fire"></i></div>
       <p>Trending</p>
@@ -70,18 +146,18 @@
      <div class="filter">
       <div><i class="fa-brands fa-fort-awesome"></i></div>
        <p>Castles</p>
-     </div>
+     </div> -->
 
      <div class="tax-toggle">
-      <div class="form-check-reverse form-switch">
+      <div class="form-check-reverse form-switch switch">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+        <label class="form-check-label" for="flexSwitchCheckDefault">show Taxes</label>
       </div>
      </div>
     
   </div>
 
-  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 front">
     <% for (let list of listing) {%>
 
       <div class="my-card card col">
@@ -117,3 +193,4 @@
       }
     })
   </script>
+  </body>
