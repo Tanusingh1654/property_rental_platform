@@ -177,7 +177,7 @@ footer{
     justify-content: center;
     margin: 1rem;
 }
-.my-card img{
+.list{
     height: 160px;
     width: 250 !important;
     object-fit: contain; 
