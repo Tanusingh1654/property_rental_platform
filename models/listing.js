@@ -37,6 +37,10 @@ let listingScema=new mongoose.Schema({
         type:[Number],
       
       }
+    },
+    category:{
+      type:String,
+      enum:["Mountain","camping","Beaches","River","Rooms","Iconic cities","Castles","Camping","Desert"],
     }
 
 });

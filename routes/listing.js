@@ -25,7 +25,6 @@ router
 
 
 
-
 router.get("/new",isLoggedIn,controller.renderNewForm)
 
 
@@ -39,7 +38,23 @@ router
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync( controller.editListing));
 
 
+router
+.route("/change/:filter")
+.get(wrapAsync(async(req,res)=>{
+    let filter=req.params.filter;
+    if (!filter || typeof filter !== 'string') {
+        return res.status(400).send('Invalid filter parameter.');
+    }
+   
+    let listing=await Listing.find({category:filter});
+    if(listing.length>0){
+    res.render("listings/filter.ejs",{listing});
+    }else{
+        req.flash("error","The category that you are requesting is not available right now you can explore some other");
+        res.redirect("/listings");
+    }
 
-
+})
+);
 
 module.exports=router;

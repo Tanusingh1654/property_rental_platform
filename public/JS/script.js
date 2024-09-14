@@ -19,7 +19,7 @@
 
  
   let navbar=document.getElementsByClassName("navbar");
-  let toggler=document.getElementsByClassName("navbar-toggler");
+  let toggler=document.getElementsByClassName("navbar-toggler")[0];
  let active=false;
   toggler.addEventListener("click",()=>{
     if(!active){
@@ -30,3 +30,11 @@
       active=false;
     }
   })
+
+  let btns=document.getElementsByClassName("filter");
+  for(i=0;i<btns.length;i++){
+    btn=btns[i];
+  btn.addEventListener("click",()=>{
+    console.log("clicked");
+  })
+}
