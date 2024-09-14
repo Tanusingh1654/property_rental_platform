@@ -12,7 +12,7 @@
 
                 <h2>List</h2>
             </div>
-            <div class="my-card card col-5 offset-3">
+            <div class="my-card card col-8 offset-3">
                 <img src="<%= list.image.url %>" class="card-img-top show-img" alt="list_Image" >
                 <div class="card-body">
                     <h5 class="card-title"><b>
@@ -30,13 +30,13 @@
         </div>
         <% if(current && current._id.equals(list.owner.id)){ %>
         <div class="btns row mb-4 ">
-            <div class="col-1 offset-4 ">
+            <div class="col-1 mb-2">
 
                 <form method="get" action="/listings/<%= list._id %>/edit">
                     <button class="btn btn-dark edit-btn">Edit</button>
                 </form>
             </div>
-            <div class="col-1 ">
+            <div  class="col-1 delete mb-2">
                 <form method="post" action="/listings/<%= list._id %>?_method=DELETE">
                     <button class="btn btn-dark">delete</button>
                 </form>
@@ -109,7 +109,7 @@
         </div>
         <% } %>
         
-        <div class="col-8 offset-1 mb-3">
+        <div class="col-8 offset-0 mb-3">
        <h3>Where you will be</h3>
        <div id="map"></div>
         </div>
